@@ -126,6 +126,7 @@
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="sfwdraw.h" />
     <ClInclude Include="Transform.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Collider.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="sfw.lib" />

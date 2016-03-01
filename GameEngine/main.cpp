@@ -1,14 +1,16 @@
-#include "sfwdraw.h"
+#include "Window.h"
 
 
 void main()
 {
-    sfw::initContext();
+    auto &window = Window::instance();
 
-    while (sfw::stepContext())
+    Window::instance().init();
+   
+    while (window.step())
     {
-
+    
     }
-
-    sfw::termContext();
+    
+    window.term();
 }
