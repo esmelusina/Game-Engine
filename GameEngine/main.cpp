@@ -1,17 +1,19 @@
 #include "Window.h"
-
+#include "Input.h"
+#include <iostream>
 
 void main()
 {
-    auto &window = Window::instance();
+    auto &window = Window::instance();   
+    auto &input = Input::instance();
 
+    window.init();
+    input.init();
 
-    Window::instance().init();
-   
     while (window.step())
     {
-    
-    }
-    
+        input.step();
+
+    }    
     window.term();
 }

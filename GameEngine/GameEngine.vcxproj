@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="Collider.h" />
     <ClInclude Include="crenderutils.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="sfwdraw.h" />
     <ClInclude Include="Transform.h" />
@@ -131,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="crenderutils.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="Transform.cpp" />
