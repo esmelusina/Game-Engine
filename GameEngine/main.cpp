@@ -2,7 +2,8 @@
 #include "Input.h"
 #include "Time.h"
 #include <iostream>
-#include "Entity.h"
+#include "Factory.h"
+#include "DebugDraw.h"
 
 void main()
 {
@@ -14,17 +15,18 @@ void main()
     input.init();
     time.init();
 
-
-    auto e       = Entity   ::make();
-    e->transform = Transform::make();
-    e->rigidbody = Rigidbody::make();
-    e->collider  = Collider ::make();
+    Factory::makeBall({ 40,  40 },  {10,10},  400,  40);
+    Factory::makeBall({ 70,  70 },  {40,40},  120,  12);
+    Factory::makeBall({ 80, 200 },  {0,100},  280, 200);
     
-
+    DebugDraw debugDraw;
+    
     while (window.step())
     {
         input.step();
         time.step();
+
+        debugDraw.step();
     }    
 
     time.term();

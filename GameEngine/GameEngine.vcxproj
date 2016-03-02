@@ -122,12 +122,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Factory.h" />
     <ClInclude Include="GCData.h" />
     <ClInclude Include="crenderutils.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="sfwdraw.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Window.h" />

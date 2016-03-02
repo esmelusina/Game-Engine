@@ -1,5 +1,5 @@
-#include "crenderutils.h"
 #include "sfwdraw.h"
+#include "crenderutils.h"
 
 void drawMatrix(const Matrix3 &a)
 {
@@ -11,7 +11,7 @@ void drawMatrix(const Matrix3 &a)
     sfw::drawLine(pos.x, pos.y, up.x   , up.y   , GREEN);
 }
 
-void drawTransform(const Transform &t) { drawMatrix(t.getGlobalTransform()); }
+void drawTransform(const Transform &t) { drawMatrix(t.getGlobalTransform() * Matrix3::scale({ 30,30 })); }
 
 void drawRigidbody(const Transform &t, const Rigidbody &rb)
 {
@@ -29,6 +29,11 @@ void drawAABB(const AABB    &t, unsigned TINT)
     sfw::drawLine(t.min().x, t.max().y, t.max().x, t.max().y, TINT);
     sfw::drawLine(t.max().x, t.min().y, t.max().x, t.max().y, TINT);
     sfw::drawLine(t.min().x, t.min().y, t.min().x, t.max().y, TINT);
+}
+
+void drawCollider(const Transform &t, const Collider  &c)
+{
+    drawCircle(t.getGlobalTransform() * c.circle, MAGENTA);
 }
 
 void drawCircle(const Circle    &t, unsigned TINT)

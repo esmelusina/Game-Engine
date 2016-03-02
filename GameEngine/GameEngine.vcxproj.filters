@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Core">
       <UniqueIdentifier>{c07f3c5b-0387-4837-a205-b7909612fbfd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Systems">
+      <UniqueIdentifier>{1bbcc3ec-0742-4048-96d9-b301f411e6bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="crenderutils.h">
@@ -50,6 +53,15 @@
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDraw.h">
+      <Filter>Header Files\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,11 @@
 
 struct Entity : GCData<Entity>
 {
+    // Name
+    // Tag
+    // Active
+    // TypeID
+
     Handle<Transform> transform;
     Handle<Rigidbody> rigidbody;
     Handle<Collider > collider;
@@ -18,3 +23,4 @@ struct Entity : GCData<Entity>
         Collider ::free(collider.index);
     }
 };
+
