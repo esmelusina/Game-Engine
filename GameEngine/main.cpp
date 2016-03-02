@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Factory.h"
 #include "DebugDraw.h"
+#include "RigidbodyDynamics.h"
 
 void main()
 {
@@ -20,6 +21,7 @@ void main()
     Factory::makeBall({ 80, 200 },  {0,100},  280, 200);
     
     DebugDraw debugDraw;
+    RigidbodyDynamics rigidbodies;
     
     while (window.step())
     {
@@ -27,6 +29,7 @@ void main()
         time.step();
 
         debugDraw.step();
+        rigidbodies.step();
     }    
 
     time.term();

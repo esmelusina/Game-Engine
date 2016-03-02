@@ -129,6 +129,7 @@
     <ClInclude Include="crenderutils.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="RigidbodyDynamics.h" />
     <ClInclude Include="sfwdraw.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Time.h" />

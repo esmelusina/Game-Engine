@@ -63,6 +63,9 @@
     <ClInclude Include="DebugDraw.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
+    <ClInclude Include="RigidbodyDynamics.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Collider.cpp">

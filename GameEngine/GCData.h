@@ -13,8 +13,10 @@ struct Handle
 
     T *operator->()       { return &GCData<T>::at(index); }
     T *operator->() const { return &GCData<T>::at(index); }
+   
+    T  operator*() const  { return GCData<T>::at(index); }
     
-    T operator*() const  { return GCData<T>::at(index); }
+    T *operator&()        { return &GCData<T>::at(index); }
 
     operator  int()       { return index; }
     operator  int() const { return index; }

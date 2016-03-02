@@ -20,7 +20,7 @@ void drawRigidbody(const Transform &t, const Rigidbody &rb)
     Vector2 vel = pos + rb.velocity;
 
     sfw::drawLine(pos.x, pos.y, acc.x, acc.y, CYAN);
-    sfw::drawLine(pos.x, pos.y, vel.x, vel.y, MAGENTA);
+    sfw::drawLine(pos.x, pos.y, vel.x, vel.y, YELLOW);
 }
 
 void drawAABB(const AABB    &t, unsigned TINT)
@@ -33,10 +33,10 @@ void drawAABB(const AABB    &t, unsigned TINT)
 
 void drawCollider(const Transform &t, const Collider  &c)
 {
-    drawCircle(t.getGlobalTransform() * c.circle, MAGENTA);
+    drawCircle(t.getGlobalTransform() * c.circle, BLUE);
 }
 
 void drawCircle(const Circle    &t, unsigned TINT)
 {
-    sfw::drawCircle(t.position.x, t.position.y, t.radius, 12, TINT);
+    sfw::drawCircle(t.position.x, t.position.y, t.radius, 6, TINT);
 }
