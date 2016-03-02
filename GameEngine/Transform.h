@@ -1,9 +1,9 @@
 #pragma once
 #include "VMath.h"
 #include <list>
+#include "GCData.h"
 
-
-class Transform
+class Transform : public GCData<Transform>
 {
     Transform *e_parent;
     std::list<Transform*> e_children;

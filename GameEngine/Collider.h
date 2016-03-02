@@ -2,12 +2,12 @@
 #include "Shapes.h"
 #include "collision.h"
 #include "Transform.h"
+#include "GCData.h"
 // Shapes!
 
 
-class Collider
+struct Collider : GCData<Collider>
 {
-public:
     enum SHAPE {e_CIRCLE = 1, e_AABB = 2, e_RAY = 4, e_PLANE = 8} shape;
     union
     {

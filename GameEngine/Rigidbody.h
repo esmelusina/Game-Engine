@@ -1,7 +1,8 @@
 #pragma once
 #include "VMath.h"
+#include "GCData.h"
 
-class Rigidbody
+class Rigidbody : public GCData<Rigidbody>
 {
 public:
     float mass;

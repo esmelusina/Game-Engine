@@ -15,4 +15,4 @@ void drawRay   (const Ray     &, unsigned TINT);
 
 void drawTransform(const Transform &);
 void drawRigidbody(const Transform &, const Rigidbody &);
-void drawCollider (const Transform &, const Collider &);
+void drawCollider (const Transform &, const Collider  &);

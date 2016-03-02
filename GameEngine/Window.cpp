@@ -7,7 +7,7 @@ bool Window::init(unsigned Width, unsigned Height, const char * Title)
     return isInit;
 }
 
-bool Window::step() { INIT_ASSERT; return sfw::stepContext(); }
+bool Window::step() { INIT_ASSERT(Window); return sfw::stepContext(); }
 
-void Window::term() { INIT_ASSERT; sfw::termContext(); isInit = false; }
+void Window::term() { INIT_ASSERT(Window); sfw::termContext(); isInit = false; }
 

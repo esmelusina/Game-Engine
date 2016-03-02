@@ -1,5 +1,6 @@
 #pragma once
 
+
 class Input
 {
     bool isInit;
@@ -19,7 +20,7 @@ public:
 
     bool init();
     bool step();
-    void term() {}
+    void term() { }
 
     // Based on the state of the input at the beginning of the frame
     bool getKey        (unsigned); // true if key is down
@@ -34,4 +35,6 @@ public:
 
     float getMouseX();
     float getMouseY();
+
+    bool     isInitialized() { return isInit; }
 };

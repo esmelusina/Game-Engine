@@ -18,6 +18,7 @@ bool Input::init()
 
 bool Input::step()
 {
+    INIT_ASSERT(Input);
     for (unsigned i = 0; i < 400; ++i)
     {
         keyState[i] =       keyPress[i]   >  keyRelease[i];
@@ -38,15 +39,15 @@ bool Input::step()
     return false;
 }
 
-bool Input::getKey(unsigned key)        { return keyPress[key]   > keyRelease[key]; }
-bool Input::getKeyPress(unsigned key)   { return  getKey(key)  &&   !keyState[key]; }
-bool Input::getKeyRelease(unsigned key) { return !getKey(key)  &&    keyState[key]; }
+bool Input::getKey(unsigned key)        { INIT_ASSERT(Input); return keyPress[key]   > keyRelease[key]; }
+bool Input::getKeyPress(unsigned key)   { INIT_ASSERT(Input); return  getKey(key)  &&   !keyState[key]; }
+bool Input::getKeyRelease(unsigned key) { INIT_ASSERT(Input); return !getKey(key)  &&    keyState[key]; }
 
-float Input::keyDelta(unsigned key)     { return keyPress[key] - keyRelease[key]; }
+float Input::keyDelta(unsigned key)     { INIT_ASSERT(Input); return keyPress[key] - keyRelease[key]; }
 
-bool Input::getMouseButton(unsigned key)        { return mousePress[key]    >   mouseRelease[key]; }
-bool Input::getMouseButtonPress(unsigned key)   { return  getMouseButton(key) && !mouseState[key]; }
-bool Input::getMouseButtonRelease(unsigned key) { return !getMouseButton(key) &&  mouseState[key]; }
+bool Input::getMouseButton(unsigned key)        { INIT_ASSERT(Input); return mousePress[key]    >   mouseRelease[key]; }
+bool Input::getMouseButtonPress(unsigned key)   { INIT_ASSERT(Input); return  getMouseButton(key) && !mouseState[key]; }
+bool Input::getMouseButtonRelease(unsigned key) { INIT_ASSERT(Input); return !getMouseButton(key) &&  mouseState[key]; }
 
-float Input::getMouseX() { return mouseX; }
-float Input::getMouseY() { return mouseY; }
+float Input::getMouseX() { INIT_ASSERT(Input); return mouseX; }
+float Input::getMouseY() { INIT_ASSERT(Input); return mouseY; }

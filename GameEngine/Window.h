@@ -1,7 +1,8 @@
 #pragma once
 #include <cassert>
+#include <typeinfo>
 
-#define INIT_ASSERT assert(isInit && "Window is not initialized!")
+#define INIT_ASSERT(name) assert(isInit && #name "not initialized!")
 /*
     There is only ever one window.
     Make details about the window accessible.
@@ -26,8 +27,8 @@ public:
     bool step();
     void term();
 
-    unsigned getWidth() { INIT_ASSERT; return width; }
-    unsigned getHeight() { INIT_ASSERT; return height; }
+    unsigned getWidth() {  INIT_ASSERT(Window); return width; }
+    unsigned getHeight() { INIT_ASSERT(Window); return height; }
     bool     isInitialized() { return isInit; }
 };
 
