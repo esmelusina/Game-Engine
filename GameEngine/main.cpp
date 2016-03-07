@@ -18,8 +18,10 @@ void main()
 
     Factory::makeBall({ 40,  40 },  {10,10},  400,  40);
     Factory::makeBall({ 70,  70 },  {40,40},  120,  12);
-    Factory::makeBall({ 80, 200 },  {0,100},  280, 200);
+    auto f = Factory::makeBall({ 80, 200 },  {0,100},  280, 200);
     
+    f->rigidbody->addTorque(1000);
+
     DebugDraw debugDraw;
     RigidbodyDynamics rigidbodies;
     
