@@ -16,11 +16,11 @@ void main()
     input.init();
     time.init();
 
-    Factory::makeBall({ 40,  40 },  {10,10},  400,  40);
+    Factory::makeBall({ 40,  40 },  {10,10},  400,  40)->rigidbody->addTorque(1000);
     Factory::makeBall({ 70,  70 },  {40,40},  120,  12);
-    auto f = Factory::makeBall({ 80, 200 },  {0,100},  280, 200);
+    Factory::makeBall({ 80, 200 },  {0,100},  280, 200);    
     
-    f->rigidbody->addTorque(1000);
+    
 
     DebugDraw debugDraw;
     RigidbodyDynamics rigidbodies;

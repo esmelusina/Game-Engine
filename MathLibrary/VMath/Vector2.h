@@ -76,8 +76,29 @@ inline bool operator==(const Vector2 &lhs, const Vector2 &rhs)
     //       fabsf(rhs.y - lhs.y) < FLT_EPSILON;
 }
 
-inline Vector2 normal(Vector2 &a)
+inline Vector2 normal(const Vector2 &a)
 {
     //assert(magnitude() != 0 && "Divide by Zero");
     return a / a.magnitude();
+}
+
+
+inline bool operator<(const Vector2 &a, const Vector2 &b) { return a.x < b.x && a.y < b.y; }
+
+inline Vector2 min(const Vector2 &a, const Vector2 &b) { return{ std::fminf(a.x, b.x), std::fminf(a.y, b.y) }; }
+inline Vector2 max(const Vector2 &a, const Vector2 &b) { return{ std::fmaxf(a.x, b.x), std::fminf(a.y, b.y) }; }
+
+
+inline Vector2 clamp(const Vector2 &val, const Vector2 &lower, const Vector2 &upper)
+{
+    return max(min(val, upper), lower);
+}
+
+
+// Affix a value to the lower and upper bounds
+// Unlike clamping, this will move objects inside of the volume to the edges
+inline Vector2 snap (const Vector2 &val, const Vector2 &lower, const Vector2 &upper)
+{
+    return {val.x - lower.x < upper.x - val.x ? lower.x : upper.x,
+            val.y - lower.y < upper.y - val.y ? lower.y : upper.y};
 }
