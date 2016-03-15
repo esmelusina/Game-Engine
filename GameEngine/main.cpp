@@ -5,6 +5,10 @@
 #include "Factory.h"
 #include "DebugDraw.h"
 #include "RigidbodyDynamics.h"
+#include "LifetimeSystem.h"
+
+#include "CollisionDetection.h"
+#include "DynamicResolution.h"
 
 void main()
 {
@@ -16,14 +20,19 @@ void main()
     input.init();
     time.init();
 
-    Factory::makeBall({ 40,  40 },  {10,10},  400,  40)->rigidbody->addTorque(1000);
-    Factory::makeBall({ 70,  70 },  {40,40},  120,  12);
-    Factory::makeBall({ 80, 200 },  {0,100},  280, 200);    
+    //Factory::makeBall({ 40,  40 },  {10,10},  400,  40)->rigidbody->addTorque(1000);
+             Factory::makeBall({ 80,  200 },  { 100,0}, 120, 120);
+    auto e = Factory::makeBall({ 720, 200 },  {-100,0}, 120, 120);
     
+    e->lifecycle = Lifecycle::make();
+    e->lifecycle->lifespan = 2;
     
 
     DebugDraw debugDraw;
     RigidbodyDynamics rigidbodies;
+    LifetimeSystem lifetimes;
+    CollisionDetection collisioner;
+    DynamicResolution dynamic;
     
     while (window.step())
     {
@@ -32,6 +41,10 @@ void main()
 
         debugDraw.step();
         rigidbodies.step();
+        lifetimes.step();
+        
+        collisioner.step();
+        dynamic.step();
     }    
 
     time.term();

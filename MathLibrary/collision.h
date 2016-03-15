@@ -30,7 +30,7 @@ inline CollisionData iTest(const Circle &a, const Circle &b)
     auto diff = b.position - a.position;
 
     cd.normal = normal(diff);
-    cd.depth  = diff.magnitude();
+    cd.depth  = (b.radius + a.radius) - diff.magnitude();
     cd.result = cd.depth > 0;
 
     return cd;    
