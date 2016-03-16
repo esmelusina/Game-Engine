@@ -21,10 +21,10 @@ class PlayerFlightSystem : public System
         float dt     = Time::instance().getDeltaTime();
 
         if (input.getKey(c.LEFT))
-            r.addTorque(-c.turnSpeed);
+            i->rigidbody->addTorque(c.turnSpeed);
 
         if(input.getKey(c.RIGHT))
-            r.addTorque( c.turnSpeed);
+            r.addTorque(-c.turnSpeed);
 
         if (input.getKey(c.FORWARD))
             r.addForce(i->transform->getUp() * c.speed);

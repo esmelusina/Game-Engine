@@ -16,5 +16,5 @@ public:
     
     PlayerController() : LEFT('A'), RIGHT('D'),
             FORWARD('W'),
-        speed(3000), turnSpeed(3000) {}
+        speed(60), turnSpeed(10) {}
 };
