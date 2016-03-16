@@ -11,10 +11,9 @@ public:
     char LEFT, RIGHT,
                 FORWARD;
 
-    float speed;
-    float turnSpeed;
+    float speed, turnSpeed;
     
     PlayerController() : LEFT('A'), RIGHT('D'),
             FORWARD('W'),
-        speed(60), turnSpeed(10) {}
+        speed(60), turnSpeed(1) {}
 };

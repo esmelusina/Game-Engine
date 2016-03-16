@@ -9,7 +9,7 @@ template<typename T>
 struct Handle
 {
     int index;
-    Handle(int i= -1) : index(i)  { }
+    Handle(int i= -1) : index(i), dataref(&GCData<T>::getData())  { }
 
     T *operator->()        { return &GCData<T>::at(index); }
     T *operator->() const  { return &GCData<T>::at(index); }
@@ -21,6 +21,8 @@ struct Handle
 
     operator  int()       { return index; }
     operator  int() const { return index; }
+private:
+    std::vector<T> *dataref;
 };
 
 // Global Homogoneous Contiguous Data
