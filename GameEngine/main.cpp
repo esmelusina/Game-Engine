@@ -10,6 +10,8 @@
 #include "CollisionDetection.h"
 #include "DynamicResolution.h"
 
+#include "PlayerFlightSystem.h"
+
 void main()
 {
     auto &window = Window::instance();   
@@ -24,15 +26,15 @@ void main()
              Factory::makeBall({ 80,  200 },  { 100,0}, 120, 120);
     auto e = Factory::makeBall({ 720, 200 },  {-100,0}, 120, 120);
     
-    e->lifecycle = Lifecycle::make();
-    e->lifecycle->lifespan = 2;
-    
+  
+    e->controller = PlayerController::make();
 
     DebugDraw debugDraw;
     RigidbodyDynamics rigidbodies;
     LifetimeSystem lifetimes;
     CollisionDetection collisioner;
     DynamicResolution dynamic;
+    PlayerFlightSystem flightsystem;
     
     while (window.step())
     {
@@ -40,11 +42,14 @@ void main()
         time.step();
 
         debugDraw.step();
+        flightsystem.step();
         rigidbodies.step();
         lifetimes.step();
         
         collisioner.step();
         dynamic.step();
+
+
     }    
 
     time.term();

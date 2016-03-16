@@ -78,6 +78,12 @@
     <ClInclude Include="LifetimeSystem.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFlightSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Collider.cpp">
@@ -108,5 +114,8 @@
   <ItemGroup>
     <Library Include="sfw.lib" />
     <Library Include="sfw_d.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="handleVisualizer.natvis" />
   </ItemGroup>
 </Project>
