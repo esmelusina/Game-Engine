@@ -140,6 +140,7 @@
     <ClInclude Include="RigidbodyDynamics.h" />
     <ClInclude Include="sfwdraw.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StaticResolution.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />

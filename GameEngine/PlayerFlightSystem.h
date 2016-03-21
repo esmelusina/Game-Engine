@@ -3,6 +3,7 @@
 #include "System.h"
 #include "Input.h"
 #include "Time.h"
+#include "Factory.h"
 
 class PlayerFlightSystem : public System
 {
@@ -28,6 +29,11 @@ class PlayerFlightSystem : public System
 
         if (input.getKey(c.FORWARD))
             r.addForce(i->transform->getUp() * c.speed);
+
+        if (input.getKey(' '))
+        {
+            Factory::makeBullet(i->transform->getPosition(), i->transform->getUp());
+        }
     }
 
 };

@@ -28,13 +28,11 @@ void main()
 
     //Factory::makeBall({ 40,  40 },  {10,10},  400,  40)->rigidbody->addTorque(1000);
      //        Factory::makeBall({ 80,  200 },  { 100,0}, 120, 120);
-    auto e = Factory::makeBall({ 720, 200 }, { }, 60, 1);
+    //auto e = Factory::makeBall({ 720, 200 }, { }, 60, 1);
     
-  
-    e->controller = PlayerController::make();
-    e->sprite = Sprite::make();
-    e->sprite->assetName = "Ship";
-    e->sprite->dimension = Vector2{72,72};
+    Factory::makePlayer({ 0,0 });
+
+
 
     DebugDraw debugDraw;
     RigidbodyDynamics rigidbodies;
@@ -49,7 +47,7 @@ void main()
         input.step();
         time.step();
 
-        debugDraw.step();
+        
         flightsystem.step();
 
         
@@ -59,7 +57,7 @@ void main()
         collisioner.step();
         dynamic.step();
         render.step();
-
+        debugDraw.step();
     }    
 
     time.term();

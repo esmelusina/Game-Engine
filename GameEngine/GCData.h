@@ -45,7 +45,7 @@ public:
     // Frees an object in the array
     static void free(int i)
     {
-        if (!at(i).isVacant) // Make sure it isn't already vacant
+        if (i > -1 && !at(i).isVacant) // Make sure it isn't already vacant
         {
             at(i).onFree();  // Event to allow child classes to respond with custom logic
             getQueue().push(i);
@@ -64,6 +64,7 @@ public:
         {
             i = getQueue().front();
             getQueue().pop();
+            at(i) = T();
         }
         else //otherwise we have to allocate new data
         {

@@ -33,10 +33,19 @@ void drawAABB(const AABB    &t, unsigned TINT)
 
 void drawCollider(const Transform &t, const Collider  &c)
 {
+    switch (c.shape)
+    {
+    case Collider::e_AABB:
+        drawAABB(t.getGlobalTransform() * c.aabb, BLUE);
+        break;
+    case Collider::e_CIRCLE:
     drawCircle(t.getGlobalTransform() * c.circle, BLUE);
+    break;
+    }
 }
 
 void drawCircle(const Circle    &t, unsigned TINT)
 {
     sfw::drawCircle(t.position.x, t.position.y, t.radius, 6, TINT);
 }
+
