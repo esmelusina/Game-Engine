@@ -67,6 +67,8 @@ struct Factory
         e->rigidbody->velocity = dir * speed;
         e->lifecycle->lifespan = life;
 
+        e->transform->setAngle(perp(dir).angle());
+
         return e;
     }
 };
